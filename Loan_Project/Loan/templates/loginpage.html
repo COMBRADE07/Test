@@ -1,0 +1,95 @@
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: white;
+        }
+
+        button {
+            background-color: #4CAF50;
+            width: 25%;
+            padding: 15px;
+            color: black;
+            border: none;
+            float: center;
+            font-size: 15px;
+        }
+
+        label {
+            font-size: 20px;
+        }
+
+        form {
+            border: 3px solid #f1f1f1;
+        }
+
+        input[type=text], input[type=password] {
+            width: 50%;
+            font-size: 15px;
+            margin: 8px 0px;
+            padding: 12px 20px;
+            display: inline-block;
+            border: 2px solid green;
+            box-sizing: border-box;
+        }
+
+        button:hover {
+            opacity: 0.7;
+        }
+
+        .container {
+            padding: 50px;
+            background-color: white;
+        }
+
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+        }
+
+        img.avatar {
+            width: 20%;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <h1>Login Form</h1>
+</center>
+<form  method="post">
+    {% load static %}
+    {% csrf_token %}
+    <center>
+        <div class="container">
+            <div class="imgcontainer">
+                <img src="{% static 'images/logninavtr.png' %}" alt="Avatar" class="avatar">
+            </div>
+            <label for='userid'><b>UserId :</b></label>
+            <input type="text" placeholder="Enter userid" name="userid" required><br>
+            <label for='password'><b>Password :</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required><br>
+            <button type="submit"><b>Login</b></button><br>
+            Don't have an account? <a href="http://localhost:8000">Register</a>
+        </div>
+    </center>
+</form>
+<script>
+    function check() {
+        var password = document.getElementsByName("password")[0].value;
+        var rpassword = document.getElementsByName("rpassword")[0].value;
+
+        if (password !== rpassword) {
+            alert("Passwords do not match.");
+            return false;
+        } else {
+            alert("Account created successfully.");
+            return true;
+        }
+    }
+</script>
+</body>
+{% include 'footer.html' %}
+</html>

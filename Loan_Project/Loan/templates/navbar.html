@@ -1,0 +1,96 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<style>-->
+<!--    * {-->
+<!--      margin-top: 0px;-->
+<!--      padding: 0px;-->
+<!--    }-->
+<!--ul {-->
+<!--  list-style-type: none;-->
+<!--  margin: 0;-->
+<!--  margin-left:0;-->
+<!--  overflow: hidden;-->
+<!--  background-color: #333;-->
+<!--}-->
+
+<!--li {-->
+<!--  float: left;-->
+<!--}-->
+
+<!--li a {-->
+<!--  display: block;-->
+<!--  color: white;-->
+<!--  text-align: center;-->
+<!--  padding: 14px 16px;-->
+<!--  text-decoration: none;-->
+<!--}-->
+
+<!--li a:hover {-->
+<!--  background-color: #111;-->
+<!--}-->
+<!--</style>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<ul>-->
+<!--  <li><a class="active" href="{% url 'index' %}">Home</a></li>-->
+<!--  <li><a href="{%url 'input_data'%}">Predict</a></li>-->
+<!--  <li><a href="{% url 'about_ds' %}">Dataset</a></li>-->
+<!--  <li><a href="{% url 'about' %}">About</a></li>-->
+<!--</ul>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+      position: fixed; /* Set the navbar to be fixed */
+      top: 0; /* Set the navbar to the top */
+      left:0;
+      margin-bottom: 50px;
+      width: 100%; /* Set the width to full width */
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #111;
+    }
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a class="active" href="{% url 'index' %}">Home</a></li>
+  <li><a href="{%url 'input_data'%}">Predict</a></li>
+  <li><a href="{% url 'about_ds' %}">Dataset</a></li>
+<!--  <li><a href="{% url 'about' %}">About</a></li>-->
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loan Status Result</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .result-container {
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .result-label {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .result-value img {
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+{% include 'navbar.html' %}<br><br>
+  <h1>Loan Status Result</h1>
+
+  <div class="result-container">
+    {% if userdata.Loan_Status %}
+      <p class="result-label">Loan Amount:</p>
+      {% if userdata.Loan_Status == 1 %}
+        <div class="result-value">
+          <img src="{% static 'images/approved.png' %}" alt="Passed" width="200" height="200">
+          <p>
+                      Congratulation your loan has been approved
+          </p>
+        </div>
+      {% else %}
+        <p class="result-value">{{ userdata.Loan_Status }}</p>
+      {% endif %}
+    {% else %}
+      <div class="result-value">
+          <img src="{% static 'images/rejected.png' %}" alt="Rejected" width="300" height="200">
+          <p>
+                      Extremely sorry! you are not eligible for this loan.
+          </p>
+        </div>
+    {% endif %}
+  </div>
+
+</body>
+{% include 'footer.html'%}
+</html>
